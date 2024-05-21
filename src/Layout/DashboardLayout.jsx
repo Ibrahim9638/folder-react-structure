@@ -14,7 +14,7 @@ const DashboardLayout = () => {
           Open drawer
         </label>
       </div>
-      <div className="drawer-side">
+      <div className="wer-side">
         <label
           htmlFor="my-drawer-2"
           aria-label="close sidebar"
