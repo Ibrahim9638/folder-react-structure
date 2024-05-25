@@ -1,4 +1,3 @@
-
 import { signInWithPopup } from "firebase/auth";
 import google from "../assets/google.png";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -6,18 +5,18 @@ import auth from "../firebase/firebase.config";
 
 
 const Login = () => {
- 
- const provider = new GoogleAuthProvider();
+  
+  const provider = new GoogleAuthProvider();
 
   const handleGoogleProvider = () => {
     signInWithPopup(auth, provider)
-    .then((result)=>{
-      const user = result.user;
-      console.log(user);
-    })
-    .catch((error)=>{
-      console.log("error", error.message);
-    })
+      .then((result) => {
+        const loggedUser = result.user;
+        setUser(loggedUser);
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
   };
 
   return (
